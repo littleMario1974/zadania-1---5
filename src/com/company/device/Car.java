@@ -2,7 +2,7 @@ package com.company.device;
 
 import java.util.Objects;
 
-public class Car extends Device {
+public class Car extends Device implements Rechargeable {
     public Double millage;
     public Double engineVolume;
     public String color;
@@ -43,4 +43,14 @@ public class Car extends Device {
         return Objects.hash(model, producer, millage, engineVolume, color, value);
     }
 
+    @Override
+    public void recharge() {
+        System.out.println("podjedź na stacje");
+        System.out.println("zacznij płakać");
+        System.out.println("sprawdź stan konta");
+        System.out.println("przemyśl to poważnie");
+        System.out.println("zatankuj");
+        System.out.println("płacz nadal");
+        System.out.println("zapłać");
+    }
 }

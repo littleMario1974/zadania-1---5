@@ -1,12 +1,13 @@
 package com.company.creatures;
 
-public abstract class Animal {
+public abstract class Animal implements Feedable {
     private static final Double DEFAULT_DOG_WEIGHT = 9.0;
     static final Double DEFAULT_WEIGHT = 5.0;
     static final Double DEFAULT_CAT_WEIGHT = 2.5;
+    private static final Double DEFAULT_FOOD_WEIGHT = 1.0;
 
     public final String species;
-    private Double weight;
+    protected Double weight;
     public Integer age;
     public String name;
     public Boolean isAlive;
@@ -35,8 +36,12 @@ public abstract class Animal {
 
 
     public void feed() {
+        this.feed(DEFAULT_FOOD_WEIGHT);
+    }
+
+    public void feed(Double foodWeight) {
         if (isAlive) {
-            weight += 1.0; // weight = weight + 1
+            weight += foodWeight;
             System.out.println("thx for food");
         } else {
             System.out.println("trochę za późno");

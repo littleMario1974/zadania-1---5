@@ -1,6 +1,6 @@
 package com.company.device;
 
-public class Phone extends Device {
+public class Phone extends Device implements Rechargeable {
     public Double screenSize;
     public String os;
 
@@ -15,5 +15,16 @@ public class Phone extends Device {
         System.out.println("czekam");
         System.out.println("czekam");
         System.out.println("o! jest logo, jednak działa");
+    }
+
+    @Override
+    public void recharge() {
+        System.out.println("znajdź ładowarkę");
+        System.out.println("znajdź wolne gniazdko");
+        System.out.println("podłącz");
+        System.out.println("czekaj");
+        System.out.println("czekaj nadal");
+        System.out.println("czekaj ");
+        System.out.println("tak, ciągle czekaj");
     }
 }
