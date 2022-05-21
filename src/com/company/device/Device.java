@@ -1,6 +1,8 @@
 package com.company.device;
 
-public abstract class Device {
+import com.company.Saleable;
+
+public abstract class Device implements Saleable {
    final public String model;
    final public String producer;
    final public Integer yearOfProduction;

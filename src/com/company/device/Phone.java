@@ -1,5 +1,7 @@
 package com.company.device;
 
+import com.company.creatures.Human;
+
 public class Phone extends Device implements Rechargeable {
     public Double screenSize;
     public String os;
@@ -26,5 +28,10 @@ public class Phone extends Device implements Rechargeable {
         System.out.println("czekaj nadal");
         System.out.println("czekaj ");
         System.out.println("tak, ciągle czekaj");
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+
     }
 }

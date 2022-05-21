@@ -8,12 +8,14 @@ public class Human extends Animal {
     public String lastName;
 
     public Phone mobile;
-    public Pet pet;
-    private Car car;
+    public Animal pet;
+    public Car car;
     private Double salary;
+    public Double cash;
 
     public Human() {
         super("homo sapiens");
+        this.cash = 0.0;
     }
 
 

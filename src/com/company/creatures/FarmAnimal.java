@@ -17,4 +17,5 @@ public class FarmAnimal extends Animal implements Edible {
         this.weight = 0.0;
         System.out.println("omniomniomniom");
     }
+
 }

@@ -1,5 +1,7 @@
 package com.company.device;
 
+import com.company.creatures.Human;
+
 import java.util.Objects;
 
 public class Car extends Device implements Rechargeable {
@@ -52,5 +54,21 @@ public class Car extends Device implements Rechargeable {
         System.out.println("zatankuj");
         System.out.println("płacz nadal");
         System.out.println("zapłać");
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if (seller.getCar() != this) {
+            throw new Exception("Sprzedawca nie ma samochodu");
+        }
+        if (buyer.cash < price) {
+            throw new Exception("Kupujący nie ma kasy");
+        }
+
+        buyer.cash -= price;
+        seller.cash += price;
+        buyer.car = this;
+        seller.car = null;
+        System.out.println("Sprzedano samochód");
     }
 }

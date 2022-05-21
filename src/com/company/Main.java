@@ -3,7 +3,6 @@ package com.company;
 import com.company.creatures.Human;
 import com.company.creatures.Pet;
 import com.company.device.Car;
-import com.company.device.Device;
 import com.company.device.Phone;
 
 public class Main {
@@ -51,22 +50,32 @@ public class Main {
                 Car pasat2 = new Car("pasat", "vw", 2001);
                 pasat2.value = 1300.0;
 
-                System.out.println(pasat1.hashCode());
-                System.out.println(pasat2.hashCode());
+                Human brotherInLaw = new Human();
+                brotherInLaw.cash = 3000.0;
 
-                if (pasat1.equals(pasat2)) {
-                        System.out.println("to samo auto");
-                } else {
-                        System.out.println("inne auto");
+                kacper.setCar(pasat1);
+
+                try {
+                        pasat1.sell(kacper, brotherInLaw, 1000.0);
+                } catch (Exception e) {
+                        System.out.println("Nie udało się sprzedać " + pasat1);
+                        e.printStackTrace();
                 }
 
-                kacper.feed();
-                System.out.println(kacper.species);
+                System.out.println("Samochód szwagra: " + brotherInLaw.getCar());
+                System.out.println("Samochód Kacpra: " + kacper.getCar());
 
-                System.out.println(pasat1 instanceof Car);
-                System.out.println(pasat1 instanceof Device);
+                Human sister = new Human();
+                sister.cash = 5000.0;
 
-                System.out.println(pasat1);
+                kacper.pet = brotherInLaw;
 
+                try {
+                        brotherInLaw.sell(kacper, sister, 2.0);
+                        System.out.println("Szwagier sprzedany");
+                } catch (Exception e) {
+                        System.out.println("Szwagier nie sprzedany");
+                        e.printStackTrace();
+                }
         }
 }
