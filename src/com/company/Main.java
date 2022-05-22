@@ -74,7 +74,7 @@ public class Main {
                         brotherInLaw.sell(kacper, sister, 2.0);
                         System.out.println("Szwagier sprzedany");
                 } catch (Exception e) {
-                        System.out.println("Szwagier nie sprzedany");
+                        System.out.println("Szwagie nie sprzedany");
                         e.printStackTrace();
                 }
         }

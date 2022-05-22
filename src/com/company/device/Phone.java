@@ -31,7 +31,7 @@ public class Phone extends Device implements Rechargeable {
     }
 
     @Override
-    public void sell(Human seller, Human buyer, Double price) {
+    public void sell(Human seller, Human buyer, Double price) throws Exception{
 
     }
 }
