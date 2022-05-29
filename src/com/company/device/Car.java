@@ -4,7 +4,7 @@ import com.company.creatures.Human;
 
 import java.util.Objects;
 
-public class Car extends Device implements Rechargeable {
+public abstract class Car extends Device implements Rechargeable {
     public Double millage;
     public Double engineVolume;
     public String color;
@@ -71,4 +71,6 @@ public class Car extends Device implements Rechargeable {
         seller.car = null;
         System.out.println("Sprzedano samochód");
     }
+
+    public abstract void refuel();
 }
